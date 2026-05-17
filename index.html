@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUMI — Одежда</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body data-page="home">
+  <header class="header">
+    <button class="menu-btn" id="menuBtn" type="button" aria-label="Меню">
+      <span></span><span></span>
+    </button>
+
+    <a href="index.html" class="logo">LUMI</a>
+
+    <div class="header-end">
+      <nav class="nav" id="nav">
+        <a href="index.html" data-nav="home" class="active">Главная</a>
+        <a href="catalog.html" data-nav="catalog">Каталог</a>
+        <a href="about.html" data-nav="about">О бренде</a>
+      </nav>
+      <div class="header-actions">
+        <a href="favorites.html" class="icon-link" aria-label="Избранное">♥ <span id="favCount">0</span></a>
+        <button class="cart-btn" id="cartBtn" type="button">Корзина <span id="cartCount">0</span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">Весна / Лето 2026</p>
+        <h1>Одежда <em>без лишнего</em></h1>
+        <p class="subtitle">Натуральные ткани, спокойные оттенки и вневременной крой.</p>
+        <a href="catalog.html" class="btn-link">Смотреть каталог</a>
+      </div>
+      <div class="hero-img">
+        <div class="hero-brand">
+          <img
+            class="hero-logo"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9LYdOJuf4nNGjEL6RAEWewOOWLT-sMq-mDQ&s"
+            alt="Логотип LUMI"
+          >
+          <p class="hero-brand-name">Lumi</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>Новинки</h2>
+        <a href="catalog.html" class="btn-link">Весь каталог</a>
+      </div>
+      <div class="grid" id="productGrid"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 LUMI. Все права защищены.</p>
+  </footer>
+
+  <aside class="cart-panel" id="cartPanel" aria-label="Корзина">
+    <div class="cart-header">
+      <h3>Корзина</h3>
+      <button class="close-btn" id="closeCart" type="button" aria-label="Закрыть">&times;</button>
+    </div>
+    <ul class="cart-list" id="cartList"></ul>
+    <p class="cart-total">Итого: <strong id="cartTotal">0 ₽</strong></p>
+    <button class="checkout-btn" id="checkoutBtn" type="button">Оформить заказ</button>
+  </aside>
+
+  <div class="overlay" id="overlay" aria-hidden="true"></div>
+
+  <script src="js/products.js" defer></script>
+  <script src="js/storage.js" defer></script>
+  <script src="js/cart.js" defer></script>
+  <script src="js/ui.js" defer></script>
+  <script src="js/home.js" defer></script>
+  <script defer>
+    document.addEventListener("DOMContentLoaded", function () {
+      initHome();
+    });
+  </script>
+</body>
+</html>

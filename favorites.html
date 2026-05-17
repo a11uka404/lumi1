@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Избранное — LUMI</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body data-page="favorites">
+  <header class="header">
+    <button class="menu-btn" id="menuBtn" type="button" aria-label="Меню">
+      <span></span><span></span>
+    </button>
+    <a href="index.html" class="logo">LUMI</a>
+    <div class="header-end">
+      <nav class="nav" id="nav">
+        <a href="index.html" data-nav="home">Главная</a>
+        <a href="catalog.html" data-nav="catalog">Каталог</a>
+        <a href="about.html" data-nav="about">О бренде</a>
+      </nav>
+      <div class="header-actions">
+        <a href="favorites.html" class="icon-link" aria-label="Избранное">♥ <span id="favCount">0</span></a>
+        <button class="cart-btn" id="cartBtn" type="button">Корзина <span id="cartCount">0</span></button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page">
+    <h1 class="page-title">Избранное</h1>
+    <p id="favoritesEmpty" class="empty-msg" hidden>В избранном пока ничего нет. <a href="catalog.html" class="btn-link">Перейти в каталог</a></p>
+    <div class="grid" id="productGrid"></div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 LUMI. Все права защищены.</p>
+  </footer>
+
+  <aside class="cart-panel" id="cartPanel">
+    <div class="cart-header">
+      <h3>Корзина</h3>
+      <button class="close-btn" id="closeCart" type="button" aria-label="Закрыть">&times;</button>
+    </div>
+    <ul class="cart-list" id="cartList"></ul>
+    <p class="cart-total">Итого: <strong id="cartTotal">0 ₽</strong></p>
+    <button class="checkout-btn" id="checkoutBtn" type="button">Оформить заказ</button>
+  </aside>
+
+  <div class="overlay" id="overlay"></div>
+
+  <script src="js/products.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/favorites-page.js"></script>
+  <script>initFavoritesPage();</script>
+</body>
+</html>
